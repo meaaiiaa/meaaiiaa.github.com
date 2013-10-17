@@ -1,123 +1,125 @@
 <!DOCTYPE html>
-<html lang="zh">
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
-        <meta charset="utf-8">
-        <title>meaaiiaa retros - python</title>
-        <link rel="stylesheet" href="/theme/css/main.css">
-                
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
+  <meta charset="utf-8">
+  <title>meaaiiaa retros - python</title>
+  <meta name="author" content="Derek">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">meaaiiaa retros </a></h1>
-                <nav><ul>
-                                                                                    <li ><a href="/category/life.html">Life</a></li>
-                                    <li ><a href="/category/tech.html">Tech</a></li>
-                                                </ul></nav>
-        </header><!-- /#banner -->
-                
-            
+    
+  
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-                            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/to-memorize-first-blog.html">to memorize first blog</a></h1> 
-                    <footer class="post-info">
-        <abbr class="published" title="2013-10-16T00:00:00">
-                Wed 16 October 2013
-        </abbr>
+  <link href="/favicon.png" rel="icon">
+  <link href="/theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+  <script src="/theme/js/modernizr-2.0.js"></script>
+  <script src="/theme/js/ender.js"></script>
+  <script src="/theme/js/octopress.js" type="text/javascript"></script>
 
-                <address class="vcard author">
-                By <a class="url fn" href="/author/derek.html">Derek</a>
-        </address>
-        <p>In <a href="/category/tech.html">Tech</a>. </p>
-<p>tags: <a href="/tag/python.html">python</a></p>
-</footer><!-- /.post-info --><p>To make a copy of the generation of statis pelican site</p>
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+    </head>
+
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="/">meaaiiaa retros</a></h1>
+  </hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/" rel="subscribe-rss">RSS</a></li>
+  </ul>
+
+<!-- TODO: add search here
+<form action="" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+-->
+
+<ul class="main-navigation">
+            <!-- TODO: add categories here? -->
+  </ul></nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+    	  		<article>
+    		<header>
+          <h1 class="entry-title">
+        <a href="/to-memorize-first-blog.html">to memorize first blog</a>
+      </h1>
+          <p class="meta"><time datetime="2013-10-16T00:00:00" pubdate>Wed 16 October 2013</time></p>
+</header>
+
+  <div class="entry-content"><p>To make a copy of the generation of statis pelican site</p>
 <p>localhost meaaiiaa.github.com # git checkout --orphan master
 Switched to a new branch 'master'
 localhost meaaiiaa.github.com # git add .
 localhost meaaiiaa.github.com # git commit -m "first blog"
 [master (root-commit) c62054a] first blog
- 33 files changed, 1305 insertions(+)
- create mode 100644 archives.html
- create mode 100644 author/derek.html
- create mode 100644 categories.html
- create mode 100644 category/life.html
- create mode 100644 index.html
- create mode 100644 my-super-beginng.html
- create mode 100644 tag/life.html
- create mode 100644 tag/writing.html
- create mode 100644 tags.html
- create mode 100644 theme/css/main.css
- create mode 100644 theme/css/pygment.css
- create mode 100644 theme/css/reset.css
- create mode 100644 theme/css/typogrify.css
- create mode 100644 theme/css/wide.css
- create mode 100644 theme/images/icons/aboutme.png
- create mode 100644 theme/images/icons/bitbucket.png
- create mode 100644 theme/images/icons/delicious.png
- create mode 100644 theme/images/icons/facebook.png
- create mode 100644 theme/images/icons/github.png
- create mode 100644 theme/images/icons/gitorious.png
- create mode 100644 theme/images/icons/gittip.png
- create mode 100644 theme/images/icons/google-groups.png
- create mode 100644 theme/images/icons/google-plus.png
- create mode 100644 theme/images/icons/hackernews.png
- create mode 100644 theme/images/icons/lastfm.png
- create mode 100644 theme/images/icons/linkedin.png
- create mode 100644 theme/images/icons/reddit.png
- create mode 100644 theme/images/icons/rss.png
- create mode 100644 theme/images/icons/slideshare.png
- create mode 100644 theme/images/icons/speakerdeck.png
- create mode 100644 theme/images/icons/twitter.png
- create mode 100644 theme/images/icons/vimeo.png
- create mode 100644 theme/images/icons/youtube.png
-localhost meaaiiaa.github.com # git push
-Username for 'https://github.com': meaaiiaa
-Password for 'https://meaaiiaa@github.com': 
-Counting objects: 42, done.
-Delta compression using up to 2 threads.
-Compressing objects: 100% (38/38), done.
-Writing objects: 100% (42/42), 22.25 KiB | 0 bytes/s, done.
-Total 42 (delta 8), reused 0 (delta 0)
-To https://github.com/meaaiiaa/meaaiiaa.github.com
- * [new branch]      master -&gt; master</p>                </article>
-                                    <p class="paginator">
-        Page 1 / 1
-    </p>
-                            </aside><!-- /#featured -->
-                                                </ol><!-- /#posts-list -->
-                        </section><!-- /#content -->
-                    <section id="extras" class="body">
-                        <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                                                    <li><a href="http://getpelican.com/">Pelican</a></li>
-                                                    <li><a href="http://python.org/">Python.org</a></li>
-                                                    <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                                                    <li><a href="#">You can modify those links in your config file</a></li>
-                                                </ul>
-                </div><!-- /.blogroll -->
-                                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/None" type="application/atom+xml" rel="alternate">atom feed</a></li>
-                            
-                                                    <li><a href="#">You can add links in your config file</a></li>
-                                                    <li><a href="#">Another social link</a></li>
-                                                </ul>
-                </div><!-- /.social -->
-                </section><!-- /#extras -->
+ 33 files changed, 1305 insertions ...</p></div>
+  <footer>
+    <a rel="full-article" href="/to-memorize-first-blog.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  	  	<div class="pagination">
+  
+    <br />
+</div>  </div>
+      <aside class="sidebar">
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+            <li class="post">
+          <a href="/to-memorize-first-blog.html">to memorize first blog</a>
+      </li>
+          </ul>
+  </section>
+    <section>
+      
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+              <li><a href="/category/blog.html">Blog</a></li>
+              <li><a href="/category/life.html">Life</a></li>
+              <li><a href="/category/tech.html">Tech</a></li>
+          </ul>
+  </section>
+   
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
+  <section>
+  <h1>Tags</h1>
+      <a href="/tag/python.html">python</a>,      <a href="/tag/life.html">Life</a>,      <a href="/tag/writing.html">Writing</a>    </section>
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-</body>
+    
+    <section>
+        <h1>Social</h2>
+        <ul>
+            <li><a href="/" type="application/rss+xml" rel="alternate">RSS</a></li>
+                    <li><a href="#" target="_blank">You can add links in your config file</a></li>
+                    <li><a href="#" target="_blank">Another social link</a></li>
+                </ul>
+    </section>
+      <section>
+        <h1>Blogroll</h2>
+        <ul>
+                    <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+                    <li><a href="http://python.org/" target="_blank">Python.org</a></li>
+                    <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
+                    <li><a href="#" target="_blank">You can modify those links in your config file</a></li>
+                </ul>
+    </section>
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Derek -
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p></footer>
+  </body>
 </html>
