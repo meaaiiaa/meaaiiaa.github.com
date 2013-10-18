@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Portage Update process</title>
+  <meta name="author" content="Derek">
+
+    
+  
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="/favicon.png" rel="icon">
+  <link href="/theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+  <script src="/theme/js/modernizr-2.0.js"></script>
+  <script src="/theme/js/ender.js"></script>
+  <script src="/theme/js/octopress.js" type="text/javascript"></script>
+
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+    </head>
+
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="/">meaaiiaa retros</a></h1>
+  </hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/" rel="subscribe-rss">RSS</a></li>
+  </ul>
+
+<!-- TODO: add search here
+<form action="" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+-->
+
+<ul class="main-navigation">
+            <!-- TODO: add categories here? -->
+  </ul></nav>
+  <div id="main">
+    <div id="content">
+      <div>
+  <article class="hentry" role="article">
+    <header>
+          <h1 class="entry-title">Portage Update process</h1>
+          <p class="meta"><time datetime="2013-10-18T20:30:00" pubdate>Fri 18 October 2013</time></p>
+</header>
+
+  <div class="entry-content"><p>cd "/var/tmp/portage/sys-apps/portage-2.3.6-r5/work/portage-2.3.6"; \
+install -m 0644 NEWS RELEASE-NOTES "/var/tmp/portage/sys-apps/portage-2.3.6-r5/image//usr/share/doc/portage-2.3.6-r5"; \
+\
+for x in "" ./ru; do \
+    for y in 1 5 ; do \
+        if [ -d "/var/tmp/portage/sys-apps/portage-2.3.6-r5/work/portage-2.3.6/man/$x" ]; then \
+            cd "/var/tmp/portage/sys-apps/portage-2.3.6-r5/work/portage-2.3.6/man/$x"; \
+            files=$(echo <em>.$y); \
+            if [ -z "$files" ] || [ "$files" = "</em>.$y" ]; then \
+                continue; \
+            fi; \
+            install -d -m0755 "/var/tmp/portage/sys-apps/portage-2.3.6-r5/image//usr/share/man/$x/man$y"; \
+            install -m0644 <em>.$y "/var/tmp/portage/sys-apps/portage-2.3.6-r5/image//usr/share/man/$x/man$y"; \
+        fi; \
+    done; \
+done; \
+\
+if [ -f "/var/tmp/portage/sys-apps/portage-2.3.6-r5/work/portage-2.3.6/doc/portage.html" ] ; then \
+    install -d -m0755 "/var/tmp/portage/sys-apps/portage-2.3.6-r5/image//usr/share/doc/portage-2.3.6-r5/html"; \
+    cd "/var/tmp/portage/sys-apps/portage-2.3.6-r5/work/portage-2.3.6/doc"; \
+    install -m0644 </em>.html "/var/tmp/portage/sys-apps/portage-2.3.6-r5/image//usr/share/doc/portage-2.3.6-r5/html"; \
+fi; \
+\
+if [ -d "/var/tmp/portage/sys-apps/portage-2.3.6-r5/work/epydoc" ] ; then \
+    install -d -m0755 "/var/tmp/portage/sys-apps/portage-2.3.6-r5/image//usr/share/doc/portage-2.3.6-r5/html"; \
+    cp -pPR "/var/tmp/portage/sys-apps/portage-2.3.6-r5/work/epydoc" \
+        "/var/tmp/portage/sys-apps/portage-2.3.6-r5/image//usr/share/doc/portage-2.3.6-r5/html/api"; \
+    cd "/var/tmp/portage/sys-apps/portage-2.3.6-r5/image//usr/share/doc/portage-2.3.6-r5/html/api"; \
+    find . -type d | xargs chmod 0755; \
+    find . -type f | xargs chmod 0644; \
+fi; \</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Completed installing portage-2.3.6-r5 into /var/tmp/portage/sys-apps/portage-2.3.6-r5/image/</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>strip: i686-pc-linux-gnu-strip --strip-unneeded -R .comment -R .GCC.command.line -R .note.gnu.gold-version
+ecompressdir: bzip2 -9 /usr/share/man
+ecompressdir: bzip2 -9 /usr/share/doc</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Installing (1 of 1) sys-apps/portage-2.3.6-r5
+ * Running preinst sanity tests...
+testBashSyntax (portage.tests.lint.test_bash_syntax.BashSyntaxTestCase) ... ok
+testCompileModules (portage.tests.lint.test_compile_modules.CompileModulesTestCase) ... ok
+testImportModules (portage.tests.lint.test_import_modules.ImportModulesTestCase) ... ok</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<hr />
+<p>Ran 3 tests in 3.801s</p>
+<p>OK
+ * Compilation and optimization of Python modules for CPython 2.7 ...
+&lt;&lt;&lt; /usr/lib/portage/pym/repoman/<strong>pycache</strong>/errors.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/repoman/<strong>pycache</strong>/utilities.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/repoman/<strong>pycache</strong>/checks.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/repoman/<strong>pycache</strong>/herdbase.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/repoman/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/repoman/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/clear_caches.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/EbuildPhase.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/AsynchronousLock.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/SetArg.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/TaskSequence.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/unmerge.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/userquery.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/chk_updated_cfg_files.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/Task.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/AbstractDepPriority.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/EbuildSpawnProcess.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/DepPriorityNormalRange.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/show_invalid_depstring_notice.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/BlockerCache.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/EbuildMerge.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/Binpkg.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/main.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/MetadataRegen.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/countdown.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/PackageArg.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/_find_deep_system_runtime_deps.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/JobStatusDisplay.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/depgraph.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/BinpkgPrefetcher.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/SpawnProcess.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/PipeReader.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/post_emerge.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/EbuildIpcDaemon.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/Dependency.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/EbuildBinpkg.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/UnmergeDepPriority.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/EbuildFetchonly.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/emergelog.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/CompositeTask.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/stdout_spinner.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/actions.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/SubProcess.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/Scheduler.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/DepPrioritySatisfiedRange.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/FifoIpcDaemon.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/BinpkgEnvExtractor.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/EbuildProcess.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/create_world_atom.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/AbstractEbuildProcess.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/ProgressHandler.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/RootConfig.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/DependencyArg.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/help.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/PackageMerge.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/getloadavg.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/AtomArg.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/UseFlagDisplay.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/EbuildExecuter.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/UninstallFailure.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/_flush_elog_mod_echo.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/BlockerDB.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/is_valid_package_atom.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/BinpkgExtractorAsync.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/AsynchronousTask.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/BlockerDepPriority.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/PollScheduler.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/FakeVartree.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/MergeListItem.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/EbuildBuildDir.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/EbuildMetadataPhase.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/Blocker.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/PackageUninstall.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/AbstractPollTask.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/Package.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/DepPriority.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/search.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/EbuildFetcher.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/create_depgraph_params.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/BinpkgVerifier.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/PackageVirtualDbapi.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/SequentialTaskQueue.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/MiscFunctionsProcess.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/BinpkgFetcher.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>/EbuildBuild.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/resolver/<strong>pycache</strong>/backtracking.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/resolver/<strong>pycache</strong>/slot_collision.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/resolver/<strong>pycache</strong>/output_helpers.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/resolver/<strong>pycache</strong>/circular_dependency.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/resolver/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/resolver/<strong>pycache</strong>/output.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/resolver/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/sync/<strong>pycache</strong>/old_tree_timestamp.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/sync/<strong>pycache</strong>/getaddrinfo_validate.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/sync/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/_emerge/sync/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/env/<strong>pycache</strong>/validators.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/env/<strong>pycache</strong>/config.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/env/<strong>pycache</strong>/loaders.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/env/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/env/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_parallel_manifest/<strong>pycache</strong>/ManifestProcess.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_parallel_manifest/<strong>pycache</strong>/ManifestTask.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_parallel_manifest/<strong>pycache</strong>/ManifestScheduler.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_parallel_manifest/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_parallel_manifest/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_ipc/<strong>pycache</strong>/QueryCommand.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_ipc/<strong>pycache</strong>/IpcCommand.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_ipc/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_ipc/<strong>pycache</strong>/ExitCommand.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_ipc/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/<strong>pycache</strong>/prepare_build_dirs.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/<strong>pycache</strong>/fetch.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/<strong>pycache</strong>/digestgen.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/<strong>pycache</strong>/getmaskingreason.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/<strong>pycache</strong>/_spawn_nofetch.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/<strong>pycache</strong>/doebuild.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/<strong>pycache</strong>/config.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/<strong>pycache</strong>/deprecated_profile_check.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/<strong>pycache</strong>/getmaskingstatus.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/<strong>pycache</strong>/_metadata_invalid.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/<strong>pycache</strong>/digestcheck.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_config/<strong>pycache</strong>/special_env_vars.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_config/<strong>pycache</strong>/helper.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_config/<strong>pycache</strong>/unpack_dependencies.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_config/<strong>pycache</strong>/MaskManager.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_config/<strong>pycache</strong>/env_var_validation.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_config/<strong>pycache</strong>/UseManager.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_config/<strong>pycache</strong>/LocationsManager.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_config/<strong>pycache</strong>/VirtualsManager.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_config/<strong>pycache</strong>/KeywordsManager.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_config/<strong>pycache</strong>/LicenseManager.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_config/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_config/<strong>pycache</strong>/features_set.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/ebuild/_config/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/package/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/dep/<strong>pycache</strong>/_slot_operator.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/dep/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/dep/<strong>pycache</strong>/dep_check.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/dep/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/_sets/<strong>pycache</strong>/shell.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/_sets/<strong>pycache</strong>/dbapi.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/_sets/<strong>pycache</strong>/profiles.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/_sets/<strong>pycache</strong>/security.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/_sets/<strong>pycache</strong>/files.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/_sets/<strong>pycache</strong>/base.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/_sets/<strong>pycache</strong>/libs.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/_sets/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/_sets/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/dbapi/<strong>pycache</strong>/_MergeProcess.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/dbapi/<strong>pycache</strong>/virtual.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/dbapi/<strong>pycache</strong>/vartree.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/dbapi/<strong>pycache</strong>/_SyncfsProcess.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/dbapi/<strong>pycache</strong>/dep_expand.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/dbapi/<strong>pycache</strong>/cpv_expand.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/dbapi/<strong>pycache</strong>/bintree.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/dbapi/<strong>pycache</strong>/_similar_name_search.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/dbapi/<strong>pycache</strong>/_expand_new_virt.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/dbapi/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/dbapi/<strong>pycache</strong>/porttree.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/dbapi/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/news.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/_legacy_globals.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/glsa.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/xpak.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/update.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/eapi.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/debug.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/data.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/checksum.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/exception.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/process.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/const.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/localization.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/dispatch_conf.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/mail.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/manifest.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/_selinux.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/cvstree.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/output.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/_global_updates.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/getbinpkg.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/eclass_cache.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/locks.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>/versions.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/elog/<strong>pycache</strong>/messages.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/elog/<strong>pycache</strong>/mod_mail_summary.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/elog/<strong>pycache</strong>/mod_syslog.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/elog/<strong>pycache</strong>/filtering.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/elog/<strong>pycache</strong>/mod_save_summary.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/elog/<strong>pycache</strong>/mod_custom.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/elog/<strong>pycache</strong>/mod_echo.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/elog/<strong>pycache</strong>/mod_mail.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/elog/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/elog/<strong>pycache</strong>/mod_save.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/elog/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/xml/<strong>pycache</strong>/metadata.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/xml/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/xml/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/_emirrordist/<strong>pycache</strong>/MirrorDistTask.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/_emirrordist/<strong>pycache</strong>/DeletionIterator.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/_emirrordist/<strong>pycache</strong>/main.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/_emirrordist/<strong>pycache</strong>/FetchTask.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/_emirrordist/<strong>pycache</strong>/FetchIterator.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/_emirrordist/<strong>pycache</strong>/Config.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/_emirrordist/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/_emirrordist/<strong>pycache</strong>/DeletionTask.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/_emirrordist/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/modules/binhost/<strong>pycache</strong>/binhost.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/modules/binhost/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/modules/binhost/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/modules/config/<strong>pycache</strong>/config.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/modules/config/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/modules/config/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/modules/world/<strong>pycache</strong>/world.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/modules/world/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/modules/world/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/modules/resume/<strong>pycache</strong>/resume.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/modules/resume/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/modules/resume/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/modules/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/modules/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/modules/move/<strong>pycache</strong>/move.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/modules/move/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/modules/move/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/modules/logs/<strong>pycache</strong>/logs.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/modules/logs/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/modules/logs/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/<strong>pycache</strong>/defaults.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/<strong>pycache</strong>/main.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/<strong>pycache</strong>/module.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/<strong>pycache</strong>/progress.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/emaint/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_async/<strong>pycache</strong>/PopenProcess.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_async/<strong>pycache</strong>/PipeLogger.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_async/<strong>pycache</strong>/ForkProcess.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_async/<strong>pycache</strong>/FileDigester.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_async/<strong>pycache</strong>/TaskScheduler.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_async/<strong>pycache</strong>/PipeReaderBlockingIO.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_async/<strong>pycache</strong>/SchedulerInterface.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_async/<strong>pycache</strong>/run_main_scheduler.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_async/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_async/<strong>pycache</strong>/FileCopier.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_async/<strong>pycache</strong>/AsyncScheduler.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_async/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_dyn_libs/<strong>pycache</strong>/display_preserved_libs.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_dyn_libs/<strong>pycache</strong>/LinkageMapELF.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_dyn_libs/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_dyn_libs/<strong>pycache</strong>/PreservedLibsRegistry.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_dyn_libs/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/<strong>pycache</strong>/mtimedb.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/<strong>pycache</strong>/lafilefixer.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/<strong>pycache</strong>/movefile.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/<strong>pycache</strong>/SlotObject.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/<strong>pycache</strong>/digraph.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/<strong>pycache</strong>/_ShelveUnicodeWrapper.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/<strong>pycache</strong>/env_update.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/<strong>pycache</strong>/_get_vm_info.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/<strong>pycache</strong>/_urlopen.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/<strong>pycache</strong>/_info_files.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/<strong>pycache</strong>/ExtractKernelVersion.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/<strong>pycache</strong>/_desktop_entry.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/<strong>pycache</strong>/_path.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/<strong>pycache</strong>/_pty.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/<strong>pycache</strong>/whirlpool.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/<strong>pycache</strong>/_ctypes.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/<strong>pycache</strong>/listdir.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_eventloop/<strong>pycache</strong>/global_event_loop.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_eventloop/<strong>pycache</strong>/EventLoop.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_eventloop/<strong>pycache</strong>/GlibEventLoop.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_eventloop/<strong>pycache</strong>/PollSelectAdapter.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_eventloop/<strong>pycache</strong>/PollConstants.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_eventloop/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/util/_eventloop/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/tests/lint/<strong>pycache</strong>/test_compile_modules.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/tests/lint/<strong>pycache</strong>/test_import_modules.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/tests/lint/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/tests/lint/<strong>pycache</strong>/test_bash_syntax.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/tests/lint/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/tests/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/tests/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/cache/<strong>pycache</strong>/anydbm.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/cache/<strong>pycache</strong>/sql_template.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/cache/<strong>pycache</strong>/cache_errors.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/cache/<strong>pycache</strong>/volatile.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/cache/<strong>pycache</strong>/sqlite.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/cache/<strong>pycache</strong>/mappings.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/cache/<strong>pycache</strong>/template.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/cache/<strong>pycache</strong>/fs_template.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/cache/<strong>pycache</strong>/ebuild_xattr.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/cache/<strong>pycache</strong>/metadata.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/cache/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/cache/<strong>pycache</strong>/flat_hash.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/cache/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/repository/<strong>pycache</strong>/config.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/repository/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/repository/<strong>pycache</strong>
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/proxy/<strong>pycache</strong>/objectproxy.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/proxy/<strong>pycache</strong>/lazyimport.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/proxy/<strong>pycache</strong>/<strong>init</strong>.cpython-33.py[co]
+&lt;&lt;&lt; /usr/lib/portage/pym/portage/proxy/<strong>pycache</strong>                       [ ok ]
+ * Compilation and optimization of Python modules for CPython 2.7 ...    [ ok ]
+ * Compilation and optimization of Python modules for CPython 3.3 ...    [ ok ]
+System appears upgraded to new profile system.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Recording sys-apps/portage in "world" favorites file...
+Auto-cleaning packages...</p>
+<p>No outdated packages were found on your system.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<ul>
+<li>GNU info directory index is up-to-date.</li>
+</ul></div>
+    <footer>
+      <p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">Derek</span>
+  </span>
+  <time datetime="2013-10-18T20:30:00" pubdate>Fri 18 October 2013</time>  </p>    </footer>
+  </article>
+
+  </div>
+      <aside class="sidebar">
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+            <li class="post">
+          <a href="/installing-e17-issues.html">Installing E17 issues</a>
+      </li>
+            <li class="post">
+          <a href="/installing-mate-upon-funtoo-issues.html">Installing mate upon funtoo issues</a>
+      </li>
+            <li class="post">
+          <a href="/portage-update-process.html">Portage Update process</a>
+      </li>
+            <li class="post">
+          <a href="/octopress-theme-under-pelican.html">Octopress theme under pelican</a>
+      </li>
+            <li class="post">
+          <a href="/to-memorize-first-blog.html">to memorize first blog</a>
+      </li>
+          </ul>
+  </section>
+    <section>
+      
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+              <li><a href="/category/blog.html">Blog</a></li>
+              <li><a href="/category/life.html">Life</a></li>
+              <li><a href="/category/tech.html">Tech</a></li>
+          </ul>
+  </section>
+   
+
+  <section>
+  <h1>Tags</h1>
+      <a href="/tag/python.html">python</a>,      <a href="/tag/life.html">Life</a>,      <a href="/tag/writing.html">Writing</a>    </section>
+
+    
+    <section>
+        <h1>Social</h2>
+        <ul>
+            <li><a href="/" type="application/rss+xml" rel="alternate">RSS</a></li>
+                    <li><a href="#" target="_blank">You can add links in your config file</a></li>
+                    <li><a href="#" target="_blank">Another social link</a></li>
+                </ul>
+    </section>
+      <section>
+        <h1>Blogroll</h2>
+        <ul>
+                    <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+                    <li><a href="http://python.org/" target="_blank">Python.org</a></li>
+                    <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
+                    <li><a href="#" target="_blank">You can modify those links in your config file</a></li>
+                </ul>
+    </section>
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Derek -
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p></footer>
+  </body>
+</html>

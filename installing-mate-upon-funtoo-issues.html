@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Installing mate upon funtoo issues</title>
+  <meta name="author" content="Derek">
+
+    
+  
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="/favicon.png" rel="icon">
+  <link href="/theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+  <script src="/theme/js/modernizr-2.0.js"></script>
+  <script src="/theme/js/ender.js"></script>
+  <script src="/theme/js/octopress.js" type="text/javascript"></script>
+
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+    </head>
+
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="/">meaaiiaa retros</a></h1>
+  </hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/" rel="subscribe-rss">RSS</a></li>
+  </ul>
+
+<!-- TODO: add search here
+<form action="" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+-->
+
+<ul class="main-navigation">
+            <!-- TODO: add categories here? -->
+  </ul></nav>
+  <div id="main">
+    <div id="content">
+      <div>
+  <article class="hentry" role="article">
+    <header>
+          <h1 class="entry-title">Installing mate upon funtoo issues</h1>
+          <p class="meta"><time datetime="2013-10-18T20:32:00" pubdate>Fri 18 October 2013</time></p>
+</header>
+
+  <div class="entry-content"><p>USE="-static-libs -doc -mmx hardened nls -debug -examples css -djbfft -oss -dga -dmx -xinerama -mp3rtp -sndfile cxx ogg -3dnow (-altivec) asf mp4 asf mp4 -pic introspection orc X -sdl -emacs -highlight {-test} -vim alsa dvd flac lame mp3 mpeg ogg vorbis wavpack -a52 -aac -cdda -dts -dv -dvb -ffmpeg -http -jack -libass -libvisual -mms -musepack -opus -pulseaudio -taglib -theora -v4l -vcd -vpx -x264 -xv -xvid svg dbus alsa gtk gtk3 sound udev -gnome -gstreamer -oss -pulseaudio -tdb -startup-notification ps tiff -caja -djvu -dvi (-gtk3) -mate-keyring -t1lib -xps -applet python ipv6 -glade -cjk jpeg python tiff -debug -exif -lcms -svg -xmp themes -animation-rtl policykit -libnotify -pulseaudio -smartcard policykit -ldap -gnome consolekit opengl pam -systemd flac mp3 vorbis -aac -debug -pulseaudio -speex -twolame extras -bluetooth" </p>
+<p>=mate-base/mate-settings-daemon-1.6.1 ~x86
+=mate-base/mate-settings-daemon-1.6.1 ~x86
+=mate-base/mate-file-manager-1.6.2 ~x86
+=dev-libs/glib-2.36.4-r1 ~x86
+=mate-extra/mate-dialogs-1.6.0 ~x86
+=x11-terms/mate-terminal-1.6.1 ~x86
+=mate-base/mate-1.6.0 ~x86
+=gnome-base/dconf-0.16.1 ~x86
+=app-editors/mate-text-editor-1.6.0 ~x86
+=app-text/mate-document-viewer-1.6.1 ~x86
+=x11-themes/mate-themes-1.6.1 ~x86
+=mate-extra/mate-character-map-1.6.0 ~x86
+=x11-themes/mate-icon-theme-1.6.2 ~x86
+=media-gfx/mate-image-viewer-1.6.1 ~x86
+=mate-base/mate-applets-1.6.1 ~x86
+=mate-extra/mate-media-1.6.0 ~x86
+=mate-base/libmatekeyring-1.6.0 ~x86
+=mate-base/libmatekbd-1.6.1 ~x86
+=app-text/mate-doc-utils-1.6.1 ~x86
+=mate-base/mate-panel-1.6.1 ~x86
+=mate-extra/mate-calc-1.6.0 ~x86
+=mate-base/mate-common-1.6.2 ~x86
+=app-arch/mate-file-archiver-1.6.0-r1 ~x86
+=x11-wm/mate-window-manager-1.6.2 ~x86
+=mate-extra/mate-polkit-1.6.0 ~x86
+=x11-misc/mate-menu-editor-1.6.0 ~x86
+=mate-base/mate-keyring-1.6.0 ~x86
+=x11-libs/libmatewnck-1.6.1 ~x86
+=mate-extra/mate-power-manager-1.6.2 ~x86
+=mate-base/mate-menus-1.6.0 ~x86
+=mate-base/mate-session-manager-1.6.1 ~x86
+=mate-extra/mate-screensaver-1.6.0 ~x86
+=x11-themes/mate-backgrounds-1.6.0 ~x86
+=dev-libs/libmateweather-1.6.2 ~x86
+=mate-extra/mate-system-monitor-1.6.1 ~x86
+=mate-extra/mate-utils-1.6.0 ~x86
+=mate-base/mate-control-center-1.6.1 ~x86</p>
+<p>=net-wireless/mate-bluetooth-1.6.0 ~x86
+=mate-base/mate-desktop-1.6.1-r1 ~x86
+=mate-extra/mate-file-manager-sendto-1.6.0 ~x86
+=mate-extra/mate-file-manager-open-terminal-1.6.0 ~x86</p>
+<p>[ebuild  N     ] media-libs/libogg-1.3.0  USE="-static-libs" 
+[ebuild  N     ] media-libs/libdvdcss-1.2.13  USE="-doc -static-libs" 
+[ebuild  N     ] dev-libs/libsigc++-2.3.1  USE="-doc -static-libs {-test}" 
+[ebuild  N     ] dev-libs/vala-common-0.18.1 
+[ebuild  N     ] app-text/docbook-dsssl-stylesheets-1.79 
+[ebuild  N     ] x11-libs/gnome-pty-helper-0.34.2  USE="hardened" 
+[ebuild  N     ] media-sound/wavpack-4.60.1  USE="-mmx" 
+[ebuild  N     ] gnome-base/gnome-common-3.6.0 
+[ebuild  N     ] app-text/docbook-sgml-dtd-3.0-r3 
+[ebuild  N     ] dev-libs/libburn-1.3.0_p01  USE="-cdio -debug -static-libs -track-src-odirect" 
+[ebuild  N     ] sys-power/cpufrequtils-008-r4  USE="nls -debug" 
+[ebuild  N     ] dev-libs/libisofs-1.3.0  USE="acl zlib -debug -static-libs -verbose-debug -xattr" 
+[ebuild  N     ] app-cdr/cdrtools-3.00  USE="acl unicode" 
+[ebuild  N     ] virtual/cdrtools-0 
+[ebuild  N     ] x11-themes/hicolor-icon-theme-0.12 
+[ebuild  N     ] app-cdr/dvd+rw-tools-7.1-r1 
+[ebuild  N     ] dev-perl/XML-NamespaceSupport-1.110.0 
+[ebuild  N     ] dev-libs/libical-0.48  USE="-examples" 
+[ebuild  N     ] dev-perl/XML-SAX-Base-1.80.0 
+[ebuild  N     ] perl-core/Storable-2.390.0 
+[ebuild  N     ] virtual/perl-Storable-2.390.0 
+[ebuild  N    ~] mate-base/mate-common-1.6.2 
+[ebuild  N     ] dev-lang/orc-0.4.16-r1  USE="-examples -static-libs" 
+[ebuild  N     ] media-libs/libvorbis-1.3.3  USE="-static-libs" 
+[ebuild  N     ] media-libs/libdvdread-4.2.0  USE="css" 
+[ebuild  N     ] x11-proto/xf86miscproto-0.9.3 
+[ebuild  N     ] x11-proto/scrnsaverproto-1.2.2  USE="-doc" 
+[ebuild  N     ] x11-libs/libxkbfile-1.0.8  USE="-static-libs" 
+[ebuild  N     ] media-libs/libmad-0.15.1b-r7  USE="-debug -static-libs" 
+[ebuild  N     ] dev-libs/openobex-1.5  USE="-bluetooth -debug -irda -syslog -usb" 
+[ebuild  N     ] x11-apps/xrandr-1.3.5 
+[ebuild  N     ] x11-apps/xmodmap-1.0.7 
+[ebuild  N     ] x11-proto/recordproto-1.14.2  USE="-doc" 
+[ebuild  N     ] media-libs/a52dec-0.7.4-r6  USE="-djbfft -oss -static-libs" 
+[ebuild  N     ] x11-proto/videoproto-2.3.1 
+[ebuild  N     ] x11-proto/resourceproto-1.2.0 
+[ebuild  N     ] x11-libs/libXxf86misc-1.0.3  USE="-static-libs" 
+[ebuild  N     ] x11-libs/libXScrnSaver-1.2.2  USE="-static-libs" 
+[ebuild  N     ] x11-libs/libXtst-1.2.1  USE="-doc -static-libs" 
+[ebuild  N     ] x11-libs/libXres-1.0.6  USE="-static-libs" 
+[ebuild  N     ] media-libs/libdvdnav-4.2.0 
+[ebuild  N     ] x11-libs/libXv-1.0.7  USE="-static-libs" 
+[ebuild  N     ] x11-apps/xdpyinfo-1.3.0-r1  USE="-dga -dmx -xinerama" 
+[ebuild  N     ] x11-libs/xcb-util-0.3.9  USE="-doc -static-libs {-test}" 
+[ebuild  N     ] x11-libs/xcb-util-renderutil-0.3.8  USE="-doc -static-libs {-test}" 
+[ebuild  N     ] x11-libs/xcb-util-keysyms-0.3.9  USE="-doc -static-libs {-test}" 
+[ebuild  N     ] x11-libs/xcb-util-wm-0.3.9  USE="-doc -static-libs {-test}" 
+[ebuild  N     ] x11-libs/xcb-util-image-0.3.9  USE="-doc -static-libs {-test}" 
+[ebuild  N     ] x11-libs/startup-notification-0.12  USE="-static-libs" 
+[ebuild  N     ] media-sound/lame-3.99.5  USE="-debug -mmx -mp3rtp -sndfile -static-libs" 
+[ebuild  N     ] virtual/awk-0 
+[ebuild  N     ] app-text/scrollkeeper-dtd-1.0 
+[ebuild  N     ] dev-util/itstool-1.2.0 
+[ebuild  N     ] media-libs/flac-1.2.1-r3  USE="cxx ogg -3dnow (-altivec) -debug -sse -static-libs" 
+[ebuild  N     ] dev-perl/XML-SAX-0.990.0 
+[ebuild  N     ] app-text/iso-codes-3.40 
+[ebuild  N     ] media-libs/libexif-0.6.21  USE="nls -doc -static-libs" 
+[ebuild  N     ] x11-apps/xkbcomp-1.2.3 
+[ebuild  N     ] app-admin/eselect-notify-send-0.1 
+[ebuild  N     ] dev-perl/XML-LibXML-1.900.0  USE="{-test}" 
+[ebuild  N     ] dev-util/gtk-builder-convert-2.24.16  PYTHON_SINGLE_TARGET="python2_7 -python2_6" PYTHON_TARGETS="python2_7 -python2_6" 
+[ebuild  N     ] gnome-extra/yelp-xsl-3.6.1 
+[ebuild  N     ] media-libs/libsndfile-1.0.25  USE="alsa -minimal -sqlite -static-libs" 
+[ebuild  N     ] dev-perl/XML-Simple-2.200.0 
+[ebuild  N     ] x11-misc/xkeyboard-config-2.7 
+[ebuild  N     ] media-libs/taglib-1.8-r1  USE="asf mp4 -debug -examples {-test}" 
+[ebuild  N     ] media-libs/libao-1.1.0-r1  USE="alsa -mmap -nas -pulseaudio -static-libs" 
+[ebuild  N     ] virtual/opengl-7.0 
+[ebuild  N     ] x11-misc/icon-naming-utils-0.8.90 
+[ebuild  N     ] app-text/yelp-tools-3.6.1 
+[ebuild  N     ] app-cdr/cdrdao-1.2.3-r1  USE="mad vorbis -encode -gcdmaster" 
+[ebuild  N     ] app-text/scrollkeeper-9999-r1 
+[ebuild  N     ] app-text/rarian-0.8.1-r2  USE="-static-libs" 
+[ebuild  N     ] dev-util/gdbus-codegen-2.32.4-r1001  PYTHON_ABIS="2.7 3.3 -2.5 -2.6 -3.1 -3.2 (-3.4)" 
+[ebuild  N     ] x11-misc/xdg-user-dirs-0.14  USE="gtk nls" 
+[ebuild  N     ] x11-misc/xdg-user-dirs-gtk-0.9 
+[ebuild  N     ] x11-themes/gtk-engines-2.20.2  USE="-accessibility -lua" 
+[ebuild  N     ] dev-cpp/cairomm-1.10.0  USE="-doc -svg" 
+[ebuild  N     ] media-libs/libmpeg2-0.5.1  USE="X -sdl" 
+[ebuild  N     ] media-gfx/imagemagick-6.8.6.8  USE="X bzip2 cxx jpeg openmp png tiff truetype xml zlib -autotrace -corefonts -djvu -fftw -fontconfig -fpx -graphviz -hdri -jbig -jpeg2k -lcms -lqr -lzma -opencl -openexr -pango -perl -postscript -q32 -q64 -q8 -raw -static-libs -svg {-test} -webp -wmf" 
+[ebuild  NS    ] app-text/docbook-xml-dtd-4.3-r1 [4.1.2-r6]
+[ebuild  NS    ] app-text/docbook-xml-dtd-4.4-r2 [4.1.2-r6]
+[ebuild     U ~] dev-libs/glib-2.36.4-r1 [2.32.4-r1] PYTHON_TARGETS="python2_7%* -python2_6%" 
+[ebuild  N     ] app-text/gnome-doc-utils-0.20.10 
+[ebuild  N     ] dev-util/gtk-doc-1.19  USE="-debug -doc -emacs -highlight {-test} -vim" PYTHON_SINGLE_TARGET="python2_7 -python2_6" PYTHON_TARGETS="python2_7 -python2_6" 
+[ebuild  N     ] media-libs/gstreamer-0.10.36  USE="introspection nls orc {-test}" 
+[ebuild  N     ] dev-libs/libunique-1.1.6-r1  USE="dbus introspection -debug -doc {-test}" 
+[ebuild  N     ] dev-cpp/glibmm-2.32.1  USE="-debug -doc -examples {-test}" 
+[ebuild  N     ] gnome-base/libgtop-2.28.4  USE="introspection -debug -doc" 
+[ebuild  N     ] x11-libs/libxklavier-5.2.1  USE="introspection -doc" 
+[ebuild  N     ] dev-libs/libcroco-0.6.8  USE="{-test}" 
+[ebuild  N     ] x11-themes/sound-theme-freedesktop-0.8 
+[ebuild  N     ] dev-libs/libIDL-0.8.14 
+[ebuild  N     ] dev-libs/fribidi-0.19.5-r1  USE="-static-libs" 
+[ebuild  N     ] x11-libs/libwnck-2.31.0  USE="introspection -doc -startup-notification" 
+[ebuild  N    ~] app-text/mate-doc-utils-1.6.1  USE="-debug" 
+[ebuild  N     ] media-libs/gst-plugins-base-0.10.36  USE="introspection nls orc" 
+[ebuild  N    ~] x11-themes/mate-icon-theme-1.6.2 
+[ebuild  N    ~] mate-base/libmatekbd-1.6.1  USE="(-gtk3) {-test}" 
+[ebuild  N    ~] x11-libs/libmatewnck-1.6.1  USE="introspection -startup-notification" 
+[ebuild  N     ] gnome-base/librsvg-2.36.4  USE="gtk introspection -tools -vala" 
+[ebuild  N    ~] mate-extra/mate-polkit-1.6.0  USE="introspection -debug" 
+[ebuild  N     ] dev-cpp/pangomm-2.28.4  USE="-doc" 
+[ebuild  N     ] dev-cpp/atkmm-2.22.6  USE="-doc" 
+[ebuild  N     ] gnome-base/orbit-2.14.19-r3  USE="-debug -pic -static-libs {-test}" 
+[ebuild  N     ] media-video/dvdauthor-0.7.0  USE="-graphicsmagick" 
+[ebuild  N    ~] x11-themes/mate-backgrounds-1.6.0 
+[ebuild  N    ~] mate-base/mate-session-manager-1.6.1  USE="ipv6 -debug (-gtk3) -systemd" 
+[ebuild  N     ] media-libs/gst-plugins-ugly-0.10.19  USE="nls orc" 
+[ebuild  N     ] media-libs/gst-plugins-good-0.10.31  USE="nls orc" 
+[ebuild  N     ] gnome-base/gconf-2.32.4-r1  USE="gtk introspection policykit -debug -ldap" 
+[ebuild  N    ~] mate-extra/mate-dialogs-1.6.0  USE="compat -debug (-gtk3) -libnotify" 
+[ebuild  N     ] dev-cpp/gtkmm-2.24.2  USE="-doc -examples {-test}" 
+[ebuild  N     ] media-plugins/gst-plugins-alsa-0.10.36 
+[ebuild  N     ] media-plugins/gst-plugins-vorbis-0.10.36 
+[ebuild  N     ] media-plugins/gst-plugins-x-0.10.36 
+[ebuild  N     ] media-plugins/gst-plugins-ogg-0.10.36 
+[ebuild  N     ] media-libs/gst-plugins-bad-0.10.23-r1  USE="nls orc" 
+[ebuild  N    ~] app-arch/mate-file-archiver-1.6.0-r1  USE="-caja -debug (-gtk3)" 
+[ebuild  N    ~] mate-extra/mate-calc-1.6.0  USE="(-gtk3)" 
+[ebuild  N    ~] mate-base/mate-desktop-1.6.1-r1  USE="-debug (-gtk3)" 
+[ebuild  N    ~] mate-base/mate-menus-1.6.0  USE="introspection python -debug" 
+[ebuild  N     ] media-plugins/gst-plugins-lame-0.10.19 
+[ebuild  N    ~] mate-extra/mate-character-map-1.6.0  USE="introspection python -cjk -debug (-gtk3) {-test}" 
+[ebuild  N     ] x11-libs/vte-0.28.2-r206  USE="introspection python -debug -glade" PYTHON_ABIS="2.7 -2.6" 
+[ebuild  N     ] media-plugins/gst-plugins-gconf-0.10.31 
+[ebuild  N     ] media-plugins/gst-plugins-taglib-0.10.31 
+[ebuild  N     ] media-plugins/gst-plugins-flac-0.10.31 
+[ebuild  N     ] media-plugins/gst-plugins-mpeg2dec-0.10.19 
+[ebuild  N     ] media-plugins/gst-plugins-mad-0.10.19 
+[ebuild  N     ] media-plugins/gst-plugins-a52dec-0.10.19  USE="orc" 
+[ebuild  N     ] media-plugins/gst-plugins-resindvd-0.10.23 
+[ebuild  N     ] media-plugins/gst-plugins-dvdread-0.10.19 
+[ebuild  N     ] media-plugins/gst-plugins-wavpack-0.10.31 
+[ebuild  N    ~] mate-extra/mate-system-monitor-1.6.1 
+[ebuild  N     ] media-plugins/gst-plugins-meta-0.10-r8  USE="X alsa dvd flac lame mp3 mpeg ogg vorbis wavpack -a52 -aac -cdda -dts -dv -dvb -ffmpeg -http -jack -libass -libvisual -mms -musepack -opus -oss -pulseaudio -taglib -theora -v4l -vcd -vpx -x264 -xv -xvid" 
+[ebuild  N    ~] mate-extra/mate-screensaver-1.6.0  USE="consolekit opengl pam -debug -libnotify -systemd" 
+[ebuild  N    ~] media-gfx/mate-image-viewer-1.6.1  USE="dbus jpeg python tiff -debug -exif -lcms -svg -xmp" 
+[ebuild  N    ~] app-editors/mate-text-editor-1.6.0  USE="python -debug -spell" 
+[ebuild  N     ] gnome-base/gvfs-1.12.3-r1  USE="udev -afp -archive -avahi -bluetooth -bluray -cdda -doc -fuse -gdu -gnome-keyring -gphoto2 -http -ios -samba (-udisks)" 
+[ebuild  N    ~] mate-base/mate-file-manager-1.6.2  USE="introspection -debug (-gtk3) -mate -xmp" 
+[ebuild  N    ~] mate-extra/mate-file-manager-open-terminal-1.6.0 
+[ebuild  N     ] net-wireless/bluez-4.101-r5  USE="alsa consolekit cups readline -debug -gstreamer -pcmcia (-selinux) -test-programs -usb" PYTHON_SINGLE_TARGET="python2_7 -python2_6" PYTHON_TARGETS="python2_7 -python2_6" 
+[ebuild  N     ] media-libs/libcanberra-0.30-r1  USE="alsa gtk gtk3 sound udev -gnome -gstreamer -oss -pulseaudio -tdb" 
+[ebuild  N    ~] gnome-base/dconf-0.16.1  USE="X {-test}" 
+[ebuild  N     ] app-mobilephone/obexd-0.46  USE="-eds -nokia -server -usb" 
+[ebuild  N     ] app-text/libspectre-0.2.7  USE="-debug -doc -static-libs" 
+[ebuild  N    ~] mate-base/mate-settings-daemon-1.6.1  USE="policykit -debug -libnotify -pulseaudio -smartcard" 
+[ebuild  N    ~] x11-wm/mate-window-manager-1.6.2  USE="(-gtk3) -startup-notification {-test} -xinerama" 
+[ebuild  N     ] app-cdr/brasero-2.32.1-r1  USE="cdr css dvd introspection libburn -doc -nautilus -playlist {-test} -vcd" 
+[ebuild  N    ~] mate-extra/mate-utils-1.6.0  USE="ipv6 -applet -debug {-test}" 
+[ebuild  N    ~] app-text/mate-document-viewer-1.6.1  USE="dbus introspection ps tiff -caja -debug -djvu -dvi (-gtk3) -mate-keyring -t1lib -xps" 
+[ebuild  N    ~] x11-terms/mate-terminal-1.6.1  USE="(-gtk3)" 
+[ebuild  N    ~] mate-extra/mate-file-manager-sendto-1.6.0  USE="cdr mail -debug -gajim -pidgin -upnp" 
+[ebuild  N    ~] mate-base/mate-control-center-1.6.1  USE="-debug (-gtk3)" 
+[ebuild  N     ] x11-libs/libnotify-0.7.5-r1  USE="introspection -doc {-test}" 
+[ebuild  N     ] x11-misc/notification-daemon-0.5.0 
+[ebuild  N     ] virtual/notification-daemon-0  USE="-gnome" 
+[ebuild  N    ~] net-wireless/mate-bluetooth-1.6.0  USE="introspection -debug {-test}" 
+[ebuild  N    ~] mate-base/mate-keyring-1.6.0  USE="pam -debug (-gtk3) {-test}" 
+[ebuild  N    ~] mate-base/libmatekeyring-1.6.0  USE="-debug {-test}" 
+[ebuild  N    ~] mate-extra/mate-power-manager-1.6.2  USE="policykit -applet (-gtk3) {-test}" 
+[ebuild  N     ] x11-themes/gtk-engines-murrine-0.98.2  USE="themes -animation-rtl" 
+[ebuild  N     ] x11-themes/murrine-themes-0.98.0 
+[ebuild  N    ~] x11-themes/mate-themes-1.6.1 
+[ebuild  N     ] gnome-base/gnome-keyring-2.32.1-r1  USE="pam -debug {-test}" 
+[ebuild  N     ] gnome-base/libgnome-keyring-2.32.0  USE="-debug {-test}" 
+[ebuild  N     ] net-libs/libsoup-gnome-2.38.1  USE="introspection -debug" 
+[ebuild  N    ~] dev-libs/libmateweather-1.6.2  USE="python -debug" 
+[ebuild  N    ~] mate-base/mate-panel-1.6.1  USE="introspection -networkmanager" 
+[ebuild  N    ~] mate-base/mate-applets-1.6.1  USE="ipv6 policykit -networkmanager" 
+[ebuild  N    ~] mate-extra/mate-media-1.6.0  USE="flac mp3 vorbis -aac -debug -pulseaudio -speex -twolame" 
+[ebuild  N    ~] x11-misc/mate-menu-editor-1.6.0 
+[blocks B      ] &lt;dev-libs/gobject-introspection-1.36 ("&lt;dev-libs/gobject-introspection-1.36" is blocking dev-libs/glib-2.36.4-r1)</p>
+<p>!!! Multiple package instances within a single package slot have been pulled
+!!! into the dependency graph, resulting in a slot conflict:</p>
+<p>dev-libs/glib:2</p>
+<p>(dev-libs/glib-2.36.4-r1::gentoo, ebuild scheduled for merge) pulled in by
+    &gt;=dev-libs/glib-2.35.2:2 required by (gnome-base/dconf-0.16.1::gentoo, ebuild scheduled for merge)
+    (and 1 more with the same problem)</p>
+<p>(dev-libs/glib-2.32.4-r1::gentoo, installed) pulled in by
+    &lt;dev-libs/glib-2.33:2 required by (dev-libs/gobject-introspection-1.32.1::gentoo, installed)</p>
+<p>It may be possible to solve this problem by using package.mask to
+prevent one of those packages from being selected. However, it is also
+possible that conflicting dependencies exist such that they are
+impossible to satisfy simultaneously.  If such a conflict exists in
+the dependencies of two different packages, then those packages can
+not be installed simultaneously.</p>
+<p>For more information, see MASKED PACKAGES section in the emerge man
+page or refer to the Gentoo Handbook.</p>
+<p>mate-base/mate-applets-1.6.1 开始始终无法安装，报python_pkg_start() not called的错误，进行了revdep-rebuild也无法定位问题所在，最后居然是通过安装layman,然后layman -S更新了所有的overlays，然后emerge mate-applets成功，难道overlay会对优先级或者包的配置有改动？不明白。</p>
+<p>安装完MATE包之后，用STARTX命令启动，发现没有此命令，于是安装XORG-SERVER包之后通过，并将exec mate-ssesion写入~/.xinitrc文件。
+这个时候STARTX发现NOUVEAU，NV，VESA等MODULE都没办法正确加载，于是报NO SCREEN FOUND的错误。搜索网络之后，想起来x11-drivers/xf86-video-nouveau这个包还没装，装完可以正确进入桌面。
+与XORG-SERVER相关的XF86包似乎有xf86-input-mouse，xf86-input-synaptics几个吧，好像一共4个，当然不包括那些VESA，VMWARE的驱动。 </p>
+<p>安装THUNDERBIRD之后，开始配置，之前配置过很多次邮件系统，可是老是不知道哪一种是正确的，还有为什么要这样配置，这次决定记录一下试验过程。
+STEP 1. server hostname和PORT比较容易，因为是固定的，主要是SSL，AUTHENTICATION。考虑到INCOMING时不需要输入密码去接收，所以将POP3的AUTHENTICATION置为AUTODETECT，SMTP（i.e. outgoing)置为NORMAL PASSWORD。SSL均为AUTODETECT。
+STEP 2. 测试发现，PROBING THE GIVEN SERVER得到的设置为：POP3的SSL为STARTTLS，SMTP的SSL为NONE；POP3的AUTHENTICATION为KERBEROS/GSSAPI，SMTP的AUTHENTICATION为NORMAL PASSWORD。此时用这个设置去测试并且确认自己明白其中风险，系统会提示ADD SECURITY EXCEPTION，此时选择GET CERTIFICATE AND CONFIRM SECURITY EXCEPTION，点击DONE，系统会提示USERNAME OR PASSWORD WRONG？
+STEP 3. 此时只调整POP3的AUTHENTICATION为AUTODETECT，即SSL，AUTHENTICATION的设置分别为POP3：STARTTLS AUTODETECT，SMTP：NONE NORMAL PASSWORD。系统依然提示PROBING THE GIVEN SERVER得到的设置。DO
+STEP 4. SSL，AUTHENTICATION的设置分别为POP3：STARTTLS NORMAL PASSWORD，SMTP：NONE NORMAL PASSWORD，点击DONE，测试通过。即此，发现不管发送还是接收均为密码验证，只是SSL安全级别不同。</p></div>
+    <footer>
+      <p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">Derek</span>
+  </span>
+  <time datetime="2013-10-18T20:32:00" pubdate>Fri 18 October 2013</time>  </p>    </footer>
+  </article>
+
+  </div>
+      <aside class="sidebar">
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+            <li class="post">
+          <a href="/installing-e17-issues.html">Installing E17 issues</a>
+      </li>
+            <li class="post">
+          <a href="/installing-mate-upon-funtoo-issues.html">Installing mate upon funtoo issues</a>
+      </li>
+            <li class="post">
+          <a href="/portage-update-process.html">Portage Update process</a>
+      </li>
+            <li class="post">
+          <a href="/octopress-theme-under-pelican.html">Octopress theme under pelican</a>
+      </li>
+            <li class="post">
+          <a href="/to-memorize-first-blog.html">to memorize first blog</a>
+      </li>
+          </ul>
+  </section>
+    <section>
+      
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+              <li><a href="/category/blog.html">Blog</a></li>
+              <li><a href="/category/life.html">Life</a></li>
+              <li><a href="/category/tech.html">Tech</a></li>
+          </ul>
+  </section>
+   
+
+  <section>
+  <h1>Tags</h1>
+      <a href="/tag/python.html">python</a>,      <a href="/tag/life.html">Life</a>,      <a href="/tag/writing.html">Writing</a>    </section>
+
+    
+    <section>
+        <h1>Social</h2>
+        <ul>
+            <li><a href="/" type="application/rss+xml" rel="alternate">RSS</a></li>
+                    <li><a href="#" target="_blank">You can add links in your config file</a></li>
+                    <li><a href="#" target="_blank">Another social link</a></li>
+                </ul>
+    </section>
+      <section>
+        <h1>Blogroll</h2>
+        <ul>
+                    <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+                    <li><a href="http://python.org/" target="_blank">Python.org</a></li>
+                    <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
+                    <li><a href="#" target="_blank">You can modify those links in your config file</a></li>
+                </ul>
+    </section>
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Derek -
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p></footer>
+  </body>
+</html>
