@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Installing E17 issues</title>
+  <title>Dip into installing deb under Funtoo/Gentoo</title>
   <meta name="author" content="Derek">
 
     
@@ -52,34 +52,33 @@
       <div>
   <article class="hentry" role="article">
     <header>
-          <h1 class="entry-title">Installing E17 issues</h1>
-          <p class="meta"><time datetime="2013-10-18T20:34:00" pubdate>Fri 18 October 2013</time></p>
+          <h1 class="entry-title">Dip into installing deb under Funtoo/Gentoo</h1>
+          <p class="meta"><time datetime="2013-10-19T20:21:00" pubdate>Sat 19 October 2013</time></p>
 </header>
 
-  <div class="entry-content"><p>install E17, firstly mistakenly installed E16, and only unmerges E16, then emerge --ask enlightenment:0.17.</p>
-<p>dependencies:
-keyword:
-=x11-wm/enlightenment-0.17.5_pre1 ~x86
-=dev-libs/eeze-1.7.8 ~x86
-=dev-libs/efreet-1.7.8 ~x86
-=dev-libs/e_dbus-1.7.8 ~x86
-=dev-libs/eina-1.7.8 ~x86
-=media-libs/edje-1.7.8 ~x86
-=dev-libs/ecore-1.7.9_pre1 ~x86
-=dev-libs/eio-1.7.8 ~x86
-=dev-libs/embryo-1.7.8 ~x86
-=media-libs/evas-1.7.9_pre1 ~x86
-=dev-libs/eet-1.7.8 ~x86</p>
-<p>use:</p>
-<blockquote>
-<p>=dev-libs/e_dbus-1.7.8 libnotify</p>
-</blockquote></div>
+  <div class="entry-content"><p>Firstly I search Funtoo wiki for portage introduction on the principles of it, and I get below:
+    The latest progress and changes related to EAPI/PMS and Portage can often be found in the Gentoo Council meeting logs, which are listed on the Gentoo Council page.</p>
+<div class="highlight"><pre><span class="n">The</span> <span class="n">latest</span> <span class="n">PMS</span> <span class="n">specification</span> <span class="n">to</span> <span class="n">be</span> <span class="n">approved</span> <span class="n">by</span> <span class="n">the</span> <span class="n">Gentoo</span> <span class="n">Council</span> <span class="n">is</span> <span class="n">available</span><span class="o">:</span> <span class="n">eapi</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">approved</span><span class="o">-</span><span class="mi">2010</span><span class="o">-</span><span class="mo">01</span><span class="o">-</span><span class="mf">18.</span> <span class="n">The</span> <span class="n">PMS</span> <span class="n">specification</span> <span class="n">is</span> <span class="n">an</span> <span class="n">attempt</span> <span class="n">to</span> <span class="n">codify</span> <span class="n">the</span> <span class="n">inner</span> <span class="n">workings</span> <span class="n">of</span> <span class="n">Portage</span><span class="p">,</span> <span class="n">and</span> <span class="n">is</span> <span class="n">authored</span> <span class="n">by</span> <span class="n">Ciaran</span> <span class="n">McCreesh</span> <span class="n">and</span> <span class="n">Stephen</span> <span class="n">Bennett</span> <span class="n">as</span> <span class="n">a</span> <span class="n">Gentoo</span><span class="o">-</span><span class="n">hosted</span> <span class="n">project</span><span class="p">.</span>
+</pre></div>
+
+
+<p>However I am eagerly to let it working, so put it off now. </p>
+<p>Steps: </p>
+<ol>
+<li>
+<p>rems out SRC_URI section, in this case I think it would not initiate the downloading session, as I download it for fast work. First time, portage will neglect the x86(my architecture) downloading which defined in its ebuild. However, second time when I turn it on and use ebuild /path/to/package.ebuild digest, it says "Insufficient data for checksum verification".</p>
+</li>
+<li>
+<p>then I did some mask file rename, and made "emerge --sync", and this time it turns ok(last time when I did this, it gives me alert such like "could not download ~amd chrome deb file", comparing with my arch, which is weired), so I think at the gentoo repo sise, someone has done some changes, and when I was doing that, it happens so</p>
+</li>
+</ol>
+<p>When encountered some odd, just leave it and have a rest, maybe next time you will find something new embrace you, it happens.</p></div>
     <footer>
       <p class="meta">
   <span class="byline author vcard">
     Posted by <span class="fn">Derek</span>
   </span>
-  <time datetime="2013-10-18T20:34:00" pubdate>Fri 18 October 2013</time>  </p>    </footer>
+  <time datetime="2013-10-19T20:21:00" pubdate>Sat 19 October 2013</time>  </p>    </footer>
   </article>
 
   </div>
