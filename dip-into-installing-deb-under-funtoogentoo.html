@@ -56,13 +56,13 @@
           <p class="meta"><time datetime="2013-10-19T20:21:00" pubdate>Sat 19 October 2013</time></p>
 </header>
 
-  <div class="entry-content"><p>Firstly I search Funtoo wiki for portage introduction on the principles of it, and I get below:
-&dollar;The latest progress and changes related to EAPI/PMS and Portage can often be found in the Gentoo Council meeting logs, which are listed on the Gentoo Council page.</p>
-<p>&dollar;The latest PMS specification to be approved by the Gentoo Council is available: eapi-3-approved-2010-01-18. The PMS specification is an attempt to codify the inner workings of Portage, and is authored by Ciaran McCreesh and Stephen Bennett as a Gentoo-hosted project.</p>
+  <div class="entry-content"><p>Firstly I search Funtoo wiki for portage introduction on the principles of it, and I get below:</p>
+<p>&nbsp;The latest progress and changes related to EAPI/PMS and Portage can often be found in the Gentoo Council meeting logs, which are listed on the Gentoo Council page.</p>
+<p>&nbsp;The latest PMS specification to be approved by the Gentoo Council is available: eapi-3-approved-2010-01-18. The PMS specification is an attempt to codify the inner workings of Portage, and is authored by Ciaran McCreesh and Stephen Bennett as a Gentoo-hosted project.</p>
 <p>However I am eagerly to let it working, so put it off now. </p>
 <p>Steps: </p>
-<p>&minus;rems out SRC_URI section, in this case I think it would not initiate the downloading session, as I download it for fast work. First time, portage will neglect the x86(my architecture) downloading which defined in its ebuild. However, second time when I turn it on and use ebuild /path/to/package.ebuild digest, it says "Insufficient data for checksum verification".</p>
-<p>&middot;then I did some mask file rename, and made "emerge --sync", and this time it turns ok(last time when I did this, it gives me alert such like "could not download ~amd chrome deb file", comparing with my arch, which is weired), so I think at the gentoo repo sise, someone has done some changes, and when I was doing that, it happens so</p>
+<p>&nbsp;rems out SRC_URI section, in this case I think it would not initiate the downloading session, as I download it for fast work. First time, portage will neglect the x86(my architecture) downloading which defined in its ebuild. However, second time when I turn it on and use ebuild /path/to/package.ebuild digest, it says "Insufficient data for checksum verification".</p>
+<p>&nbsp;then I did some mask file rename, and made "emerge --sync", and this time it turns ok(last time when I did this, it gives me alert such like "could not download ~amd chrome deb file", comparing with my arch, which is weired), so I think at the gentoo repo sise, someone has done some changes, and when I was doing that, it happens so</p>
 <p>When encountered some odd, just leave it and have a rest, maybe next time you will find something new embrace you, it happens.</p></div>
     <footer>
       <p class="meta">
